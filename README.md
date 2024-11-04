@@ -1,2 +1,8 @@
-# CampersApp
-This is a web application for the company 'TravelTrucks,' which specializes in camper rentals. Users can browse the camper catalog, view detailed information about each camper, read reviews, and submit their rental requests for the selected camper.
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
