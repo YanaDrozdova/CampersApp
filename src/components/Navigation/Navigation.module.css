@@ -1,0 +1,22 @@
+.container {
+    height: 72px;
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 24px 64px;
+    gap: 450px;
+}
+
+.navList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.active {
+    color: #D84343;
+}
