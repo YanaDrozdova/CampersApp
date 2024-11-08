@@ -1,0 +1,87 @@
+svg {
+    stroke: #101828;
+}
+
+.filterTitle {
+    position: relative;
+    width: 360px;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 48px;
+}
+
+.filterTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #DADDE1;
+}
+
+.text {
+    font-weight: 500;
+    margin-bottom: 32px;
+    color: #475467;
+}
+
+.equipList {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin-bottom: 32px;
+}
+
+.equipItem {
+    width: calc((100% - 24px)/3);
+    height: 96px;
+}
+
+.filterBtn {
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    border: 1px solid #DADDE1;
+    border-radius: 12px;
+    padding: 16px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.vehicleTypeBtn {
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    border: 1px solid #DADDE1;
+    border-radius: 10px;
+    padding: 16px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.fullyIntegrBtn {
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    border: 1px solid #DADDE1;
+    border-radius: 10px;
+    padding: 4px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.searchBtn {
+    margin-top: 8px;
+}

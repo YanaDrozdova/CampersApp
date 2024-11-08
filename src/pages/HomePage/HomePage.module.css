@@ -54,7 +54,7 @@
     margin-top: 16px;
 }
 
-.viewBtn {
+/* .viewBtn {
     background-color: #E44848;
     color: #FFFFFF;
     padding: 16px 48.5px;
@@ -68,4 +68,11 @@
 
 .viewBtn:hover {
     background-color: #D84343;
+} */
+
+.viewBtn {
+    z-index: 1;
+    width: 173px;
+    margin-top: 40px;
+    margin-bottom: 260px;
 }

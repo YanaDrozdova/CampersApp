@@ -34,8 +34,8 @@ a {
 button {
   display: block;
   cursor: pointer;
-  height: min-content;
   border: none;
   font-weight: 500;
+  font-family: inherit;
   cursor: pointer;
 }
