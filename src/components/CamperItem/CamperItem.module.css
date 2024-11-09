@@ -1,0 +1,80 @@
+.imgWrapper {
+    max-width: 292px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.camperInfoWrapper {
+    width: 524px;
+}
+
+.titleWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.titleText {
+    width: calc(100% - 38px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.icon {
+    margin-left: 12px;
+}
+
+.iconStar {
+    fill: #FFC531;
+    stroke: #FFC531;
+}
+
+.revLocWrapper {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.reviews {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.text {
+    color: #475467;
+    margin-bottom: 24px;
+}
+
+.featuresList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-right: 50px;
+    margin-bottom: 24px;
+}
+
+.featureItem {
+    border-radius: 100px;
+    padding: 12px 18px;
+    background-color: #F2F4F7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.itemText {
+    font-weight: 500;
+}
+
+.camperImage {
+    object-fit: cover;
+}
