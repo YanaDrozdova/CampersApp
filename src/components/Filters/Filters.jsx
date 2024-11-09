@@ -1,25 +1,64 @@
+import clsx from 'clsx';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { toggleFilter } from '../../redux/filters/filtersSlice.js';
 import Button from '../Button/Button.jsx';
 import CityInput from '../CityInput/CityInput.jsx';
+
 import css from './Filters.module.css';
 
 export default function Filters() {
+  const dispatch = useDispatch();
+  const selectedFilters = useSelector(state => state.filters.selectedFilters);
+
+  const handleToggleFilter = filter => dispatch(toggleFilter(filter));
+
+  const isSelected = filter => selectedFilters.includes(filter);
+
+  // Об'єкт, що містить фільтри та відповідні іконки
+  const filterIcons = {
+    AC: 'icon-wind',
+    Automatic: 'icon-diagram',
+    Kitchen: 'icon-cup-hot',
+    TV: 'icon-tv',
+    Bathroom: 'icon-ph_shower',
+    Van: 'icon-van',
+    'Fully Integrated': 'icon-bi_grid',
+    Alcove: 'icon-alcove',
+  };
+
   return (
     <>
       <CityInput />
       <p className={css.text}>Filters</p>
-      <h4 className={css.filterTitle}>
-        {/* <svg width={'32px'} height={'32px'} className={css.icon}>
-          <use
-            width={'32px'}
-            height={'32px'}
-            href={`/src/assets/images/icons-defs.svg#icon-van`}
-          />
-        </svg> */}
-        Vehicle equipment
-      </h4>
+
+      <h4 className={css.filterTitle}>Vehicle equipment</h4>
       <ul className={css.equipList}>
-        <li className={css.equipItem}>
-          <button className={css.filterBtn}>
+        {['AC', 'Automatic', 'Kitchen', 'TV', 'Bathroom'].map(filter => (
+          <li key={filter} className={css.equipItem}>
+            <button
+              className={clsx(css.filterBtn, {
+                [css.selected]: isSelected(filter), // Додаємо клас selected, якщо фільтр вибраний
+              })}
+              onClick={() => handleToggleFilter(filter)}
+            >
+              <svg width={'32px'} height={'32px'} className={css.icon}>
+                <use
+                  width={'32px'}
+                  height={'32px'}
+                  href={`/src/assets/images/icons-defs.svg#${filterIcons[filter]}`}
+                />
+              </svg>
+              <p>{filter}</p>
+            </button>
+          </li>
+        ))}
+        {/* <li className={css.equipItem}>
+          <button
+            className={clsx(css.filterBtn, {
+              [css.selected]: isSelected(filter),
+            })}
+          >
             <svg width={'32px'} height={'32px'} className={css.icon}>
               <use
                 width={'32px'}
@@ -77,11 +116,34 @@ export default function Filters() {
             </svg>
             <p>Bathroom</p>
           </button>
-        </li>
+        </li> */}
       </ul>
+
       <h4 className={css.filterTitle}>Vehicle type</h4>
       <ul className={css.equipList}>
-        <li className={css.equipItem}>
+        {['Van', 'Fully Integrated', 'Alcove'].map(filter => (
+          <li key={filter} className={css.equipItem}>
+            <button
+              className={clsx(css.filterBtn, css.vehicleTypeBtn, {
+                [css.selected]: isSelected(filter),
+                [css.fullyIntegrBtn]: filter === 'Fully Integrated', // Додаємо клас для Fully Integrated
+              })}
+              onClick={() => handleToggleFilter(filter)}
+            >
+              <svg width={'32px'} height={'32px'} className={css.icon}>
+                <use
+                  width={'32px'}
+                  height={'32px'}
+                  href={`/src/assets/images/icons-defs.svg#${
+                    filterIcons[filter] || 'icon-default'
+                  }`}
+                />
+              </svg>
+              <p>{filter}</p>
+            </button>
+          </li>
+        ))}
+        {/* <li className={css.equipItem}>
           <button className={css.vehicleTypeBtn}>
             <svg width={'32px'} height={'32px'} className={css.icon}>
               <use
@@ -116,12 +178,10 @@ export default function Filters() {
             </svg>
             <p>Alcove</p>
           </button>
-        </li>
+        </li> */}
       </ul>
+
       <div className={css.searchBtnContainer}>
-        {/* <button className={css.searchBtn}>
-          Search
-        </button> */}
         <Button text="Search" className={css.searchBtn} />
       </div>
     </>
