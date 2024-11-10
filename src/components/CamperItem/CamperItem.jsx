@@ -4,7 +4,7 @@ import css from './CamperItem.module.css';
 
 export default function CamperItem() {
   const navigate = useNavigate();
-  const handleClick = () => navigate('/catalog/:id');
+  const handleClick = () => navigate('/catalog/:id/features');
 
   return (
     <>

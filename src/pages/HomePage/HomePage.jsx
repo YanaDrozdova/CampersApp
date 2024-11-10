@@ -14,9 +14,6 @@ export default function HomePage() {
         <h2 className={css.text}>
           You can find everything you want in our catalog
         </h2>
-        {/* <button className={css.viewBtn} onClick={handleClick}>
-          View Now
-        </button> */}
         <Button className={css.viewBtn} onClick={handleClick} text="View Now" />
       </div>
     </main>

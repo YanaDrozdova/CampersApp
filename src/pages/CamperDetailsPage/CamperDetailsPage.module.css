@@ -1,5 +1,102 @@
 .container {
-    padding: 48px 64px 52px 64px;
+    max-width: 1440px;
+    padding: 48px 64px 80px 64px;
     display: flex;
-    gap: 64px;
+    flex-direction: column;
+}
+
+.descritionWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-bottom: 60px;
+}
+
+.revLocWrapper {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.reviews {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.camperImgList {
+    display: flex;
+    gap: 48px;
+    width: 100%;
+}
+
+.camperImgItem {
+    width: calc((100% - 144px)/4);
+}
+
+.text {
+    color: #475467
+}
+
+.addInfoTitle {
+    margin-bottom: 44px;
+}
+
+.addInfoTitleList {
+    position: relative;
+    display: flex;
+    gap: 40px;
+}
+
+.addInfoTitleList::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    bottom: -24px;
+    left: 0;
+    height: 1px;
+    background-color: #DADDE1;
+    z-index: 1;
+}
+
+.link {
+    position: relative;
+    /* щоб псевдоелемент можна було правильно розмістити */
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    bottom: -26px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #E44848;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
+
+.link.active::after {
+    transform: scaleX(1);
+    /* При активному стані лінія з'являється */
+}
+
+.addInfo {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+}
+
+.leftPart {
+    width: 631px;
+    background-color: #F7F7F7;
+    border-radius: 10px;
+    padding: 44px 52px;
 }
