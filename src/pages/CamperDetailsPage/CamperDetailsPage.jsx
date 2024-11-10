@@ -3,6 +3,7 @@ import css from './CamperDetailsPage.module.css';
 
 import clsx from 'clsx';
 import { NavLink, Outlet } from 'react-router-dom';
+import BookCamperForm from '../../components/BookCamperForm/BookCamperForm.jsx';
 
 const makeNavLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
@@ -89,7 +90,9 @@ export default function CamperDetailsPage() {
             <Outlet />
           </Suspense>
         </div>
-        <div className={css.rightPart}></div>
+        <div className={css.rightPart}>
+          <BookCamperForm />
+        </div>
       </div>
     </div>
   );

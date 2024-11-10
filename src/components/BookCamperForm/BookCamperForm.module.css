@@ -1,0 +1,55 @@
+.container {
+    width: 100%;
+    border: 1px solid #DADDE1;
+    border-radius: 10px;
+    padding: 44px 57px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin-bottom: 8px;
+}
+
+.text {
+    color: #475467;
+    margin-bottom: 24px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.field {
+    height: 60px;
+    border-radius: 12px;
+    background-color: #F7F7F7;
+    border: none;
+    outline: none;
+    padding: 18px;
+    font-family: inherit;
+}
+
+.commentField {
+    height: 118px;
+    border-radius: 10px;
+    resize: none;
+}
+
+.submitBtn {
+    align-self: center;
+}
+
+.field::placeholder {
+    color: #6C717B;
+    /* Світло-сірий колір для placeholder */
+    font-size: 14px;
+}
+
+.commentField::placeholder {
+    color: #6C717B;
+    /* Світло-сірий колір для placeholder */
+    font-size: 14px;
+}
