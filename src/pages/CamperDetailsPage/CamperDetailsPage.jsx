@@ -18,13 +18,13 @@ export default function CamperDetailsPage() {
           <div className={css.revLocWrapper}>
             <div className={css.reviews}>
               <svg width={'16px'} height={'16px'} className={css.iconStar}>
-                <use href={`/src/assets/images/icons-defs.svg#icon-star`} />
+                <use href={`/images/icons-defs.svg#icon-star`} />
               </svg>
               <p>4.4(2 Reviews)</p>
             </div>
             <div className={css.location}>
               <svg width={'16px'} height={'16px'} className={css.iconMap}>
-                <use href={`/src/assets/images/icons-defs.svg#icon-map`} />
+                <use href={`/images/icons-defs.svg#icon-map`} />
               </svg>
               <p>Kyiv, Ukraine</p>
             </div>
@@ -36,28 +36,28 @@ export default function CamperDetailsPage() {
             <img
               className={css.camperImage}
               alt="Camper"
-              src="/src/assets/images/Pic-min.jpg"
+              src="/images/Pic-min.jpg"
             />
           </li>
           <li className={css.camperImgItem}>
             <img
               className={css.camperImage}
               alt="Camper"
-              src="/src/assets/images/Pic-min.jpg"
+              src="/images/Pic-min.jpg"
             />
           </li>
           <li className={css.camperImgItem}>
             <img
               className={css.camperImage}
               alt="Camper"
-              src="/src/assets/images/Pic-min.jpg"
+              src="/images/Pic-min.jpg"
             />
           </li>
           <li className={css.camperImgItem}>
             <img
               className={css.camperImage}
               alt="Camper"
-              src="/src/assets/images/Pic-min.jpg"
+              src="/images/Pic-min.jpg"
             />
           </li>
         </ul>

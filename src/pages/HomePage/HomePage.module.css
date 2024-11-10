@@ -11,7 +11,7 @@
 .container::before {
     content: '';
     position: absolute;
-    background-image: url('../../assets/images/backgr-img.png'), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    background-image: url('/public/images/backgr-img.png'), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
     top: 0;
     left: 0;
     right: 0;
@@ -26,7 +26,7 @@
 @media (min-resolution: 192dpi),
 (min-resolution: 2dppx) {
     .container::before {
-        background-image: url('../../assets/images/backgr-img2x.png'), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+        background-image: url('/public/images/backgr-img2x.png'), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
 
     }
 }
@@ -53,22 +53,6 @@
     min-width: 550px;
     margin-top: 16px;
 }
-
-/* .viewBtn {
-    background-color: #E44848;
-    color: #FFFFFF;
-    padding: 16px 48.5px;
-    font-size: 16px;
-    border-radius: 200px;
-    z-index: 1;
-    width: 173px;
-    margin-top: 40px;
-    margin-bottom: 260px;
-}
-
-.viewBtn:hover {
-    background-color: #D84343;
-} */
 
 .viewBtn {
     z-index: 1;
