@@ -24,6 +24,10 @@
     gap: 4px;
 }
 
+.iconStar {
+    fill: #FFC531;
+}
+
 .location {
     display: flex;
     align-items: center;

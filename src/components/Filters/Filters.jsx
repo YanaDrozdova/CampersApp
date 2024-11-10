@@ -46,7 +46,7 @@ export default function Filters() {
                 <use
                   width={'32px'}
                   height={'32px'}
-                  href={`/src/assets/images/icons-defs.svg#${filterIcons[filter]}`}
+                  href={`/images/icons-defs.svg#${filterIcons[filter]}`}
                 />
               </svg>
               <p>{filter}</p>
@@ -134,7 +134,7 @@ export default function Filters() {
                 <use
                   width={'32px'}
                   height={'32px'}
-                  href={`/src/assets/images/icons-defs.svg#${
+                  href={`/images/icons-defs.svg#${
                     filterIcons[filter] || 'icon-default'
                   }`}
                 />

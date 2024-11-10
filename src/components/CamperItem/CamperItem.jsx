@@ -12,7 +12,7 @@ export default function CamperItem() {
         <img
           className={css.camperImage}
           alt="Camper"
-          src="/src/assets/images/Pic-min.jpg"
+          src="/images/Pic-min.jpg"
         />
       </div>
       <div className={css.camperInfoWrapper}>
@@ -22,19 +22,19 @@ export default function CamperItem() {
             <h2>€8000.00</h2>
           </div>
           <svg width={'26px'} height={'24px'} className={css.icon}>
-            <use href={`/src/assets/images/icons-defs.svg#icon-heart`} />
+            <use href={`/images/icons-defs.svg#icon-heart`} />
           </svg>
         </div>
         <div className={css.revLocWrapper}>
           <div className={css.reviews}>
             <svg width={'16px'} height={'16px'} className={css.iconStar}>
-              <use href={`/src/assets/images/icons-defs.svg#icon-star`} />
+              <use href={`/images/icons-defs.svg#icon-star`} />
             </svg>
             <p>4.4(2 Reviews)</p>
           </div>
           <div className={css.location}>
             <svg width={'16px'} height={'16px'} className={css.iconMap}>
-              <use href={`/src/assets/images/icons-defs.svg#icon-map`} />
+              <use href={`/images/icons-defs.svg#icon-map`} />
             </svg>
             <p>Kyiv, Ukraine</p>
           </div>
@@ -45,25 +45,25 @@ export default function CamperItem() {
         <ul className={css.featuresList}>
           <li className={css.featureItem}>
             <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-              <use href={`/src/assets/images/icons-defs.svg#icon-diagram`} />
+              <use href={`/images/icons-defs.svg#icon-diagram`} />
             </svg>
             <p className={css.itemText}>Automatic</p>
           </li>
           <li className={css.featureItem}>
             <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-              <use href={`/src/assets/images/icons-defs.svg#icon-fuel`} />
+              <use href={`/images/icons-defs.svg#icon-fuel`} />
             </svg>
             <p className={css.itemText}>Petrol</p>
           </li>
           <li className={css.featureItem}>
             <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-              <use href={`/src/assets/images/icons-defs.svg#icon-cup-hot`} />
+              <use href={`/images/icons-defs.svg#icon-cup-hot`} />
             </svg>
             <p className={css.itemText}>Kitchen</p>
           </li>
           <li className={css.featureItem}>
             <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-              <use href={`/src/assets/images/icons-defs.svg#icon-wind`} />
+              <use href={`/images/icons-defs.svg#icon-wind`} />
             </svg>
             <p className={css.itemText}>AC</p>
           </li>

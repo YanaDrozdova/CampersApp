@@ -6,31 +6,31 @@ export default function Features() {
       <ul className={css.featuresList}>
         <li className={css.featureItem}>
           <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-            <use href={`/src/assets/images/icons-defs.svg#icon-diagram`} />
+            <use href={`/images/icons-defs.svg#icon-diagram`} />
           </svg>
           <p className={css.itemText}>Automatic</p>
         </li>
         <li className={css.featureItem}>
           <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-            <use href={`/src/assets/images/icons-defs.svg#icon-fuel`} />
+            <use href={`/images/icons-defs.svg#icon-fuel`} />
           </svg>
           <p className={css.itemText}>Petrol</p>
         </li>
         <li className={css.featureItem}>
           <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-            <use href={`/src/assets/images/icons-defs.svg#icon-cup-hot`} />
+            <use href={`/images/icons-defs.svg#icon-cup-hot`} />
           </svg>
           <p className={css.itemText}>Kitchen</p>
         </li>
         <li className={css.featureItem}>
           <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-            <use href={`/src/assets/images/icons-defs.svg#icon-wind`} />
+            <use href={`/images/icons-defs.svg#icon-wind`} />
           </svg>
           <p className={css.itemText}>AC</p>
         </li>
         <li className={css.featureItem}>
           <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-            <use href={`/src/assets/images/icons-defs.svg#icon-radio`} />
+            <use href={`/images/icons-defs.svg#icon-radio`} />
           </svg>
           <p className={css.itemText}>Radio</p>
         </li>

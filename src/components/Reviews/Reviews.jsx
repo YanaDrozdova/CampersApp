@@ -14,27 +14,27 @@ export default function Reviews() {
               <ul className={css.starList}>
                 <li className={css.starItem}>
                   <svg width={'16px'} height={'16px'} className={css.iconStar}>
-                    <use href={`/src/assets/images/icons-defs.svg#icon-star`} />
+                    <use href={`/images/icons-defs.svg#icon-star`} />
                   </svg>
                 </li>
                 <li className={css.starItem}>
                   <svg width={'16px'} height={'16px'} className={css.iconStar}>
-                    <use href={`/src/assets/images/icons-defs.svg#icon-star`} />
+                    <use href={`/images/icons-defs.svg#icon-star`} />
                   </svg>
                 </li>
                 <li className={css.starItem}>
                   <svg width={'16px'} height={'16px'} className={css.iconStar}>
-                    <use href={`/src/assets/images/icons-defs.svg#icon-star`} />
+                    <use href={`/images/icons-defs.svg#icon-star`} />
                   </svg>
                 </li>
                 <li className={css.starItem}>
                   <svg width={'16px'} height={'16px'} className={css.iconStar}>
-                    <use href={`/src/assets/images/icons-defs.svg#icon-star`} />
+                    <use href={`/images/icons-defs.svg#icon-star`} />
                   </svg>
                 </li>
                 <li className={css.starItem}>
                   <svg width={'16px'} height={'16px'} className={css.iconStar}>
-                    <use href={`/src/assets/images/icons-defs.svg#icon-star`} />
+                    <use href={`/images/icons-defs.svg#icon-star`} />
                   </svg>
                 </li>
               </ul>
@@ -57,27 +57,27 @@ export default function Reviews() {
               <ul className={css.starList}>
                 <li className={css.starItem}>
                   <svg width={'16px'} height={'16px'} className={css.iconStar}>
-                    <use href={`/src/assets/images/icons-defs.svg#icon-star`} />
+                    <use href={`/images/icons-defs.svg#icon-star`} />
                   </svg>
                 </li>
                 <li className={css.starItem}>
                   <svg width={'16px'} height={'16px'} className={css.iconStar}>
-                    <use href={`/src/assets/images/icons-defs.svg#icon-star`} />
+                    <use href={`/images/icons-defs.svg#icon-star`} />
                   </svg>
                 </li>
                 <li className={css.starItem}>
                   <svg width={'16px'} height={'16px'} className={css.iconStar}>
-                    <use href={`/src/assets/images/icons-defs.svg#icon-star`} />
+                    <use href={`/images/icons-defs.svg#icon-star`} />
                   </svg>
                 </li>
                 <li className={css.starItem}>
                   <svg width={'16px'} height={'16px'} className={css.iconStar}>
-                    <use href={`/src/assets/images/icons-defs.svg#icon-star`} />
+                    <use href={`/images/icons-defs.svg#icon-star`} />
                   </svg>
                 </li>
                 <li className={css.starItem}>
                   <svg width={'16px'} height={'16px'} className={css.iconStar}>
-                    <use href={`/src/assets/images/icons-defs.svg#icon-star`} />
+                    <use href={`/images/icons-defs.svg#icon-star`} />
                   </svg>
                 </li>
               </ul>
