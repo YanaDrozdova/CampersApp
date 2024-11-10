@@ -45,7 +45,7 @@
 }
 
 .addInfoTitle {
-    margin-bottom: 44px;
+    margin-bottom: 68px;
 }
 
 .addInfoTitleList {
@@ -96,7 +96,5 @@
 
 .leftPart {
     width: 631px;
-    background-color: #F7F7F7;
-    border-radius: 10px;
-    padding: 44px 52px;
+
 }
