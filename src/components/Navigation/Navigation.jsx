@@ -11,7 +11,9 @@ export default function Navigation() {
     <header className={css.container}>
       <nav className={css.nav}>
         <Link to="/" className={css.logo}>
-          Travel<span className={css.logoPart}>Trucks</span>
+          <svg width={'136px'} height={'15px'} className={css.mainIcon}>
+            <use href={`/images/icons-defs.svg#icon-traveltrucks`} />
+          </svg>
         </Link>
         <ul className={css.navList}>
           <li className={css.navItem}>
