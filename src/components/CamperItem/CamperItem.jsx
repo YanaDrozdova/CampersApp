@@ -1,8 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button.jsx';
 import css from './CamperItem.module.css';
+import FeaturesList from '../FeaturesList/FeaturesList.jsx';
 
-export default function CamperItem() {
+export default function CamperItem({ camper }) {
   const navigate = useNavigate();
   const handleClick = () => navigate('/catalog/:id/features');
 
@@ -12,14 +13,14 @@ export default function CamperItem() {
         <img
           className={css.camperImage}
           alt="Camper"
-          src="/images/Pic-min.jpg"
+          src={camper.gallery[0].original}
         />
       </div>
       <div className={css.camperInfoWrapper}>
         <div className={css.titleWrapper}>
           <div className={css.titleText}>
-            <h2>Mavericks</h2>
-            <h2>€8000.00</h2>
+            <h2>{camper.name}</h2>
+            <h2>€{camper.price}</h2>
           </div>
           <svg width={'26px'} height={'24px'} className={css.icon}>
             <use href={`/images/icons-defs.svg#icon-heart`} />
@@ -30,19 +31,19 @@ export default function CamperItem() {
             <svg width={'16px'} height={'16px'} className={css.iconStar}>
               <use href={`/images/icons-defs.svg#icon-star`} />
             </svg>
-            <p>4.4(2 Reviews)</p>
+            <p>
+              {camper.rating}({camper.reviews.length} Reviews)
+            </p>
           </div>
           <div className={css.location}>
             <svg width={'16px'} height={'16px'} className={css.iconMap}>
               <use href={`/images/icons-defs.svg#icon-map`} />
             </svg>
-            <p>Kyiv, Ukraine</p>
+            <p>{camper.location}</p>
           </div>
         </div>
-        <p className={css.text}>
-          Embrace simplicity and freedom with the Mavericks panel truck...
-        </p>
-        <ul className={css.featuresList}>
+        <p className={css.text}>{camper.description}</p>
+        {/* <ul className={css.featuresList}>
           <li className={css.featureItem}>
             <svg width={'20px'} height={'20px'} className={css.featureIcon}>
               <use href={`/images/icons-defs.svg#icon-diagram`} />
@@ -67,7 +68,8 @@ export default function CamperItem() {
             </svg>
             <p className={css.itemText}>AC</p>
           </li>
-        </ul>
+        </ul> */}
+        <FeaturesList camper={camper} />
         <Button
           text="Show more"
           className={css.showMoreBtn}

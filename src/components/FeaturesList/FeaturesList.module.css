@@ -1,0 +1,21 @@
+.featuresList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-right: 50px;
+    margin-bottom: 24px;
+}
+
+.featureItem {
+    border-radius: 100px;
+    padding: 12px 18px;
+    background-color: #F2F4F7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.itemText {
+    font-weight: 500;
+}
