@@ -12,6 +12,14 @@
     margin-bottom: 60px;
 }
 
+.backLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
 .revLocWrapper {
     display: flex;
     gap: 16px;

@@ -1,19 +1,30 @@
-import { Suspense } from 'react';
-import css from './CamperDetailsPage.module.css';
-
+import { Suspense, useRef } from 'react';
+import { HiArrowSmLeft } from 'react-icons/hi';
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import clsx from 'clsx';
-import { NavLink, Outlet } from 'react-router-dom';
+
 import BookCamperForm from '../../components/BookCamperForm/BookCamperForm.jsx';
+import css from './CamperDetailsPage.module.css';
 
 const makeNavLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
 };
 
 export default function CamperDetailsPage() {
+  const location = useLocation();
+  // console.log(location);
+
+  const backLinkRef = useRef(location.state ?? '/catalog');
+  // console.log(backLinkRef.current);
+
   return (
     <div className={css.container}>
       <div className={css.descritionWrap}>
         <div className={css.titleWrapper}>
+          <Link to={backLinkRef.current} className={css.backLink}>
+            <HiArrowSmLeft />
+            Go back
+          </Link>
           <h2>Mavericks</h2>
           <div className={css.revLocWrapper}>
             <div className={css.reviews}>

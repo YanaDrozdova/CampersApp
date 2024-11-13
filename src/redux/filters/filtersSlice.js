@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   selectedFilters: [],
+  location: '',
 };
 
 const filtersSlice = createSlice({
@@ -18,9 +19,12 @@ const filtersSlice = createSlice({
         state.selectedFilters.push(filter);
       }
     },
+    changeLocation(state, action) {
+      state.location = action.payload;
+    },
   },
 });
 
-export const { toggleFilter } = filtersSlice.actions;
+export const { toggleFilter, changeLocation } = filtersSlice.actions;
 
 export default filtersSlice.reducer;

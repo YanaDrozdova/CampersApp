@@ -1,13 +1,18 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import css from './CityInput.module.css';
 import clsx from 'clsx';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeLocation } from '../../redux/filters/filtersSlice.js';
 
 export default function CityInput() {
-  const [location, setLocation] = useState('');
+  // const [location, setLocation] = useState('');
+  const dispatch = useDispatch();
+  const location = useSelector(state => state.filters.location);
 
   const handleLocationChange = e => {
-    console.log(e.target.value);
-    setLocation(e.target.value);
+    dispatch(changeLocation(e.target.value));
+    // console.log(e.target.value);
+    // setLocation(e.target.value);
     // Логіка фільтрації кемперів
   };
   return (
