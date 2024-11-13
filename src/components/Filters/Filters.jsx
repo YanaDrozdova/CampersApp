@@ -25,6 +25,7 @@ export default function Filters() {
     Van: 'icon-van',
     'Fully Integrated': 'icon-bi_grid',
     Alcove: 'icon-alcove',
+    Radio: 'icon-radio',
   };
 
   return (

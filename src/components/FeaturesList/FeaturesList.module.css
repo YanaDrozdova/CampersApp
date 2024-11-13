@@ -19,3 +19,8 @@
 .itemText {
     font-weight: 500;
 }
+
+.featureIcon {
+    stroke: #101828;
+    /* fill: white; */
+}

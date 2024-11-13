@@ -5,7 +5,7 @@ import FeaturesList from '../FeaturesList/FeaturesList.jsx';
 
 export default function CamperItem({ camper }) {
   const navigate = useNavigate();
-  const handleClick = () => navigate('/catalog/:id/features');
+  const handleClick = () => navigate(`/catalog/${camper.id}/features`);
 
   return (
     <>
@@ -20,7 +20,7 @@ export default function CamperItem({ camper }) {
         <div className={css.titleWrapper}>
           <div className={css.titleText}>
             <h2>{camper.name}</h2>
-            <h2>€{camper.price}</h2>
+            <h2>€{camper.price.toFixed(2)}</h2>
           </div>
           <svg width={'26px'} height={'24px'} className={css.icon}>
             <use href={`/images/icons-defs.svg#icon-heart`} />
