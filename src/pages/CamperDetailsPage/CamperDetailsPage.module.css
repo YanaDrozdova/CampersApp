@@ -47,10 +47,18 @@
     display: flex;
     gap: 48px;
     width: 100%;
+    justify-content: flex-start;
 }
 
 .camperImgItem {
-    width: calc((100% - 144px)/4);
+    /* width: calc((100% - 144px)/4); */
+    max-width: 292px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.camperImage {
+    object-fit: cover;
 }
 
 .text {

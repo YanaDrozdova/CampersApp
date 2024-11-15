@@ -62,7 +62,7 @@ export default function FeaturesList({ camper }) {
         if (camper[key] === true) {
           const iconStyle =
             key === 'microwave' || key === 'gas' || key === 'water'
-              ? { fill: 'white' }
+              ? { fill: 'transparent' }
               : {};
           return (
             <li key={key} className={css.featureItem}>

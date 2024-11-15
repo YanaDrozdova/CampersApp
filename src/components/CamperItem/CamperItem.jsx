@@ -2,10 +2,16 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button.jsx';
 import css from './CamperItem.module.css';
 import FeaturesList from '../FeaturesList/FeaturesList.jsx';
+import { useDispatch } from 'react-redux';
+import { getCamperById } from '../../redux/campers/operations.js';
 
 export default function CamperItem({ camper }) {
   const navigate = useNavigate();
-  const handleClick = () => navigate(`/catalog/${camper.id}/features`);
+  const dispatch = useDispatch();
+  const handleClick = async () => {
+    await dispatch(getCamperById(camper.id));
+    navigate(`/catalog/${camper.id}/features`);
+  };
 
   return (
     <>
