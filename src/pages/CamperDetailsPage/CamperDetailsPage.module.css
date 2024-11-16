@@ -20,6 +20,10 @@
     font-weight: 500;
 }
 
+.title {
+    margin-bottom: 8px;
+}
+
 .revLocWrapper {
     display: flex;
     gap: 16px;

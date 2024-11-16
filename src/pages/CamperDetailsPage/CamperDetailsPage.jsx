@@ -46,13 +46,15 @@ export default function CamperDetailsPage() {
             <HiArrowSmLeft />
             Go back
           </Link>
-          <h2>{camperInfo.name}</h2>
+          <h2 className={css.title}>{camperInfo.name}</h2>
           <div className={css.revLocWrapper}>
             <div className={css.reviews}>
               <svg width={'16px'} height={'16px'} className={css.iconStar}>
                 <use href={`/images/icons-defs.svg#icon-star`} />
               </svg>
-              <p>{camperInfo.rating}( Reviews)</p>
+              <p>
+                {camperInfo.rating}({camperInfo.reviews.length} Reviews)
+              </p>
             </div>
             <div className={css.location}>
               <svg width={'16px'} height={'16px'} className={css.iconMap}>
@@ -61,7 +63,7 @@ export default function CamperDetailsPage() {
               <p>{camperInfo.location}</p>
             </div>
           </div>
-          <h2>€{camperInfo.price}</h2>
+          <h2>€{camperInfo.price.toFixed(2)}</h2>
         </div>
         <ul className={css.camperImgList}>
           {camperInfo.gallery.map((photo, index) => (
