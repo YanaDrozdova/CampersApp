@@ -4,12 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleFilter } from '../../redux/filters/filtersSlice.js';
 import Button from '../Button/Button.jsx';
 import CityInput from '../CityInput/CityInput.jsx';
+import { vehicleEquipments, vehicleTypes } from '../../redux/constants.js';
 
 import css from './Filters.module.css';
 
 export default function Filters() {
   const dispatch = useDispatch();
   const selectedFilters = useSelector(state => state.filters.selectedFilters);
+  // const vehicleEquipments = ['AC', 'Automatic', 'Kitchen', 'TV', 'Bathroom'];
+  // const vehicleTypes = ['Van', 'Fully Integrated', 'Alcove'];
 
   const handleToggleFilter = filter => dispatch(toggleFilter(filter));
 
@@ -35,7 +38,7 @@ export default function Filters() {
 
       <h4 className={css.filterTitle}>Vehicle equipment</h4>
       <ul className={css.equipList}>
-        {['AC', 'Automatic', 'Kitchen', 'TV', 'Bathroom'].map(filter => (
+        {vehicleEquipments.map(filter => (
           <li key={filter} className={css.equipItem}>
             <button
               className={clsx(css.filterBtn, {
@@ -122,7 +125,7 @@ export default function Filters() {
 
       <h4 className={css.filterTitle}>Vehicle type</h4>
       <ul className={css.equipList}>
-        {['Van', 'Fully Integrated', 'Alcove'].map(filter => (
+        {vehicleTypes.map(filter => (
           <li key={filter} className={css.equipItem}>
             <button
               className={clsx(css.filterBtn, css.vehicleTypeBtn, {
