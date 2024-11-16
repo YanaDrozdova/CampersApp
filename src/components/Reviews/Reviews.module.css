@@ -45,13 +45,3 @@
 .reviewerName {
     font-weight: 500;
 }
-
-.starList {
-    display: flex;
-    gap: 4px;
-}
-
-.iconStar {
-    fill: #FFC531;
-    stroke: #FFC531;
-}
