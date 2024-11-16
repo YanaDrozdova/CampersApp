@@ -1,66 +1,51 @@
+import { useSelector } from 'react-redux';
 import css from './Features.module.css';
+import { selectCamperInfo } from '../../redux/campers/selectors.js';
+import FeaturesList from '../FeaturesList/FeaturesList.jsx';
 
 export default function Features() {
+  const camper = useSelector(selectCamperInfo);
+
+  function addSpaceBetweenNumberAndUnit(value) {
+    return value.replace(/(\d+)([a-zA-Zа-яА-Я]+)/, '$1 $2');
+  }
+
+  const { length, width, height, tank } = {
+    length: addSpaceBetweenNumberAndUnit(camper.length),
+    width: addSpaceBetweenNumberAndUnit(camper.width),
+    height: addSpaceBetweenNumberAndUnit(camper.height),
+    tank: addSpaceBetweenNumberAndUnit(camper.tank),
+  };
+
   return (
     <div className={css.container}>
-      <ul className={css.featuresList}>
-        <li className={css.featureItem}>
-          <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-            <use href={`/images/icons-defs.svg#icon-diagram`} />
-          </svg>
-          <p className={css.itemText}>Automatic</p>
-        </li>
-        <li className={css.featureItem}>
-          <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-            <use href={`/images/icons-defs.svg#icon-fuel`} />
-          </svg>
-          <p className={css.itemText}>Petrol</p>
-        </li>
-        <li className={css.featureItem}>
-          <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-            <use href={`/images/icons-defs.svg#icon-cup-hot`} />
-          </svg>
-          <p className={css.itemText}>Kitchen</p>
-        </li>
-        <li className={css.featureItem}>
-          <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-            <use href={`/images/icons-defs.svg#icon-wind`} />
-          </svg>
-          <p className={css.itemText}>AC</p>
-        </li>
-        <li className={css.featureItem}>
-          <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-            <use href={`/images/icons-defs.svg#icon-radio`} />
-          </svg>
-          <p className={css.itemText}>Radio</p>
-        </li>
-      </ul>
+      <FeaturesList camper={camper} />
       <div className={css.vehicleDetails}>
         <h3 className={css.vDetailsTitle}>Vehicle details</h3>
         <ul className={css.vDetailsList}>
           <li className={css.vDetailsItem}>
             <p>Form</p>
-            <p>Panel truck</p>
+            <p>{camper.form}</p>
           </li>
           <li className={css.vDetailsItem}>
             <p>Length</p>
-            <p>5.4 m</p>
+            <p>{length}</p>
           </li>
           <li className={css.vDetailsItem}>
             <p>Width</p>
-            <p>2.01 m</p>
+            <p>{width}</p>
           </li>
           <li className={css.vDetailsItem}>
             <p>Height</p>
-            <p>2.05 m</p>
+            <p>{height}</p>
           </li>
           <li className={css.vDetailsItem}>
             <p>Tank</p>
-            <p>132 l</p>
+            <p>{tank}</p>
           </li>
           <li className={css.vDetailsItem}>
             <p>Consumption</p>
-            <p>12.4l/100km</p>
+            <p>{camper.consumption}</p>
           </li>
         </ul>
       </div>
