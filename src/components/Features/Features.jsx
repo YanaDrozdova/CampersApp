@@ -25,7 +25,7 @@ export default function Features() {
         <ul className={css.vDetailsList}>
           <li className={css.vDetailsItem}>
             <p>Form</p>
-            <p>{camper.form}</p>
+            <p>{camper.form.charAt(0).toUpperCase() + camper.form.slice(1)}</p>
           </li>
           <li className={css.vDetailsItem}>
             <p>Length</p>

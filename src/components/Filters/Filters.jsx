@@ -11,8 +11,6 @@ import css from './Filters.module.css';
 export default function Filters() {
   const dispatch = useDispatch();
   const selectedFilters = useSelector(state => state.filters.selectedFilters);
-  // const vehicleEquipments = ['AC', 'Automatic', 'Kitchen', 'TV', 'Bathroom'];
-  // const vehicleTypes = ['Van', 'Fully Integrated', 'Alcove'];
 
   const handleToggleFilter = filter => dispatch(toggleFilter(filter));
 
