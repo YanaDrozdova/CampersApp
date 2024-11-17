@@ -4,6 +4,7 @@ import { fetchCampers, getCamperById } from './operations.js';
 const initialState = {
   items: [],
   camperInfo: {},
+  totalCount: 0, // загальна кількість кемперів
   isLoading: false,
   error: null,
 };
@@ -13,8 +14,20 @@ const campersSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
+      .addCase(fetchCampers.pending, state => {
+        state.isLoading = true;
+        state.error = null;
+      })
       .addCase(fetchCampers.fulfilled, (state, action) => {
-        state.items = action.payload;
+        // console.log('Fulfilled fetchCampers:', action.payload);
+        state.items = [...state.items, ...action.payload.items];
+        state.totalCount = action.payload.total;
+        state.isLoading = false;
+      })
+      .addCase(fetchCampers.rejected, (state, action) => {
+        console.error('Fetch campers failed:', action.payload);
+        state.isLoading = false;
+        state.error = action.payload;
       })
       .addCase(getCamperById.pending, state => {
         state.isLoading = true;

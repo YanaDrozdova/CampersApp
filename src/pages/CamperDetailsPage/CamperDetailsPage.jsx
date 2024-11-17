@@ -36,6 +36,7 @@ export default function CamperDetailsPage() {
     if (!camperInfo && id) {
       dispatch(getCamperById(id)); // Завантажити дані про кемпер, якщо вони не збережені в Redux
     }
+    window.scrollTo(0, 0);
   }, [dispatch, id, camperInfo]);
 
   return (

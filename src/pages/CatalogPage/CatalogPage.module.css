@@ -12,3 +12,8 @@
 .rightColumn {
     max-width: 888px;
 }
+
+.loadMoreBtn {
+    background-color: #FFFFFF;
+    border: 1px solid #DADDE1;
+}

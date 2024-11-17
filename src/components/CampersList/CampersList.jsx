@@ -6,6 +6,7 @@ import { selectCampers } from '../../redux/campers/selectors.js';
 export default function CampersList() {
   const campers = useSelector(selectCampers);
 
+  console.log('Campers from Redux:', campers); // Перевірка, скільки кемперів у списку
   return (
     <ul className={css.campersList}>
       {campers.length > 0 ? (
@@ -15,7 +16,7 @@ export default function CampersList() {
           </li>
         ))
       ) : (
-        <p>No contact was found</p>
+        <p>No camper was found</p>
       )}
     </ul>
   );
