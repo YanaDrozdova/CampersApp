@@ -5,12 +5,15 @@ axios.defaults.baseURL = 'https://66b1f8e71ca8ad33d4f5f63e.mockapi.io';
 
 export const fetchCampers = createAsyncThunk(
   'campers/getAll',
-  async ({ page = 1, limit = 4 }, thunkAPI) => {
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const page = state.campers.page;
+
     try {
       const { data } = await axios.get('/campers', {
         params: {
           page,
-          limit, //параметри пагінації
+          limit: 4, //параметри пагінації
         },
       });
       console.log('Fetched campers:', data.items);

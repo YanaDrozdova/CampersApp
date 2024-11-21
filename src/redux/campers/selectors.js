@@ -1,5 +1,7 @@
 export const selectCampers = state => state.campers.items;
 
+export const selectPage = state => state.campers.page;
+
 export const selectCamperInfo = state => state.campers.camperInfo;
 
 export const selectTotalCamperCount = state => state.campers.totalCount;
