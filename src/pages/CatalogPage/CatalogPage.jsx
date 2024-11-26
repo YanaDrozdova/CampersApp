@@ -15,6 +15,7 @@ import {
 import Button from '../../components/Button/Button.jsx';
 import { resetCampers, setPage } from '../../redux/campers/actions.js';
 import clsx from 'clsx';
+import { selectLocation } from '../../redux/filters/selectors.js';
 
 export default function CatalogPage() {
   const dispatch = useDispatch();
@@ -22,18 +23,31 @@ export default function CatalogPage() {
   const totalCampers = useSelector(selectTotalCamperCount);
   const isLoading = useSelector(selectIsLoading);
   const page = useSelector(selectPage);
+  const filter = useSelector(selectLocation);
 
   useEffect(() => {
-    dispatch(resetCampers());
-  }, [dispatch]);
+    if (campers.length === 0) {
+      // Якщо список кемперів порожній
+      dispatch(resetCampers());
+    }
+  }, [dispatch, campers.length]);
 
+  // При зміні локації, скидаємо список кемперів та номер сторінки
   useEffect(() => {
-    console.log('Fetching campers for page:', page);
+    if (filter) {
+      // Скидаємо сторінку на 1 при зміні локації
+      dispatch(setPage(1));
+      dispatch(resetCampers());
+    }
+  }, [dispatch, filter]);
+
+  // Завантажуємо кемперів при зміні сторінки або локації
+  useEffect(() => {
+    // console.log('Fetching campers for page:', page);
     dispatch(fetchCampers());
-  }, [dispatch, page]);
+  }, [dispatch, page, filter]);
 
   const handleLoadMore = () => {
-    // setPage(prevPage => prevPage + 1); // Збільшуємо номер сторінки
     dispatch(setPage(page + 1));
   };
 

@@ -8,11 +8,13 @@ export const fetchCampers = createAsyncThunk(
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const page = state.campers.page;
+    const filter = state.filters.location;
 
     try {
       const { data } = await axios.get('/campers', {
         params: {
           page,
+          filter,
           limit: 4, //параметри пагінації
         },
       });

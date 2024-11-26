@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchCampers, getCamperById } from './operations.js';
-// import { resetCampers, setPage } from './actions.js';
 
 const initialState = {
   items: [],
@@ -31,14 +30,12 @@ const campersSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchCampers.fulfilled, (state, action) => {
-        // console.log('Fulfilled fetchCampers:', action.payload);
-
-        // state.items = [...state.items, ...action.payload.items];
         state.items = [
           ...state.items,
           ...action.payload.items.filter(
             item =>
-              !state.items.some(existingItem => existingItem.id === item.id) // перевірка чи є вже такі елементи в масиві, щоб не було дублювання даних
+              !state.items.some(existingItem => existingItem.id === item.id)
+            // перевірка чи є вже такі елементи в масиві, щоб не було дублювання даних
           ),
         ];
 
