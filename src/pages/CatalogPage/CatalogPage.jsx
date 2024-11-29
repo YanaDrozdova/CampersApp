@@ -8,7 +8,7 @@ import Filters from '../../components/Filters/Filters.jsx';
 import CampersList from '../../components/CampersList/CampersList.jsx';
 import {
   selectCampers,
-  selectIsLoading,
+  selectIsLoadingCampers,
   selectPage,
   selectTotalCamperCount,
 } from '../../redux/campers/selectors.js';
@@ -21,9 +21,9 @@ export default function CatalogPage() {
   const dispatch = useDispatch();
   const campers = useSelector(selectCampers);
   const totalCampers = useSelector(selectTotalCamperCount);
-  const isLoading = useSelector(selectIsLoading);
+  const isLoading = useSelector(selectIsLoadingCampers);
   const page = useSelector(selectPage);
-  const filter = useSelector(selectLocation);
+  const locationFilter = useSelector(selectLocation);
 
   useEffect(() => {
     if (campers.length === 0) {
@@ -34,24 +34,26 @@ export default function CatalogPage() {
 
   // При зміні локації, скидаємо список кемперів та номер сторінки
   useEffect(() => {
-    if (filter) {
+    if (locationFilter) {
       // Скидаємо сторінку на 1 при зміні локації
       dispatch(setPage(1));
       dispatch(resetCampers());
     }
-  }, [dispatch, filter]);
+  }, [dispatch, locationFilter]);
 
   // Завантажуємо кемперів при зміні сторінки або локації
   useEffect(() => {
     // console.log('Fetching campers for page:', page);
     dispatch(fetchCampers());
-  }, [dispatch, page, filter]);
+  }, [dispatch, page, locationFilter]);
 
   const handleLoadMore = () => {
     dispatch(setPage(page + 1));
   };
 
   const hasMore = campers.length < totalCampers; // Перевірка, чи є ще кемпери для завантаження
+
+  const isEmpty = campers.length === 0 && !isLoading; // Перевірка, чи список порожній після завантаження
 
   return (
     <div className={css.container}>
@@ -60,6 +62,12 @@ export default function CatalogPage() {
       </div>
       <div className={css.rightColumn}>
         <CampersList />
+        {/* Виведення повідомлення, якщо кемперів не знайдено */}
+        {isEmpty && (
+          <p className={css.noResults}>
+            ... No campers found matching your filters ...
+          </p>
+        )}
         {isLoading && <p>Loading...</p>}
         {hasMore && !isLoading && (
           <Button

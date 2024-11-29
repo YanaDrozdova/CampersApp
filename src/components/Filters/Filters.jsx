@@ -7,12 +7,19 @@ import CityInput from '../CityInput/CityInput.jsx';
 import { vehicleEquipments, vehicleTypes } from '../../redux/constants.js';
 
 import css from './Filters.module.css';
+import { fetchCampers } from '../../redux/campers/operations.js';
+import { resetCampers } from '../../redux/campers/actions.js';
 
 export default function Filters() {
   const dispatch = useDispatch();
   const selectedFilters = useSelector(state => state.filters.selectedFilters);
 
   const handleToggleFilter = filter => dispatch(toggleFilter(filter));
+
+  const handleSearchCampers = () => {
+    dispatch(resetCampers());
+    dispatch(fetchCampers());
+  };
 
   const isSelected = filter => selectedFilters.includes(filter);
 
@@ -136,9 +143,7 @@ export default function Filters() {
                 <use
                   width={'32px'}
                   height={'32px'}
-                  href={`/images/icons-defs.svg#${
-                    filterIcons[filter] || 'icon-default'
-                  }`}
+                  href={`/images/icons-defs.svg#${filterIcons[filter]}`}
                 />
               </svg>
               <p>{filter}</p>
@@ -184,7 +189,11 @@ export default function Filters() {
       </ul>
 
       <div className={css.searchBtnContainer}>
-        <Button text="Search" className={css.searchBtn} />
+        <Button
+          text="Search"
+          className={css.searchBtn}
+          onClick={handleSearchCampers}
+        />
       </div>
     </>
   );

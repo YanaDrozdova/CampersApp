@@ -6,6 +6,9 @@ export const selectCamperInfo = state => state.campers.camperInfo;
 
 export const selectTotalCamperCount = state => state.campers.totalCount;
 
-export const selectIsLoading = state => state.campers.isLoading;
+export const selectIsLoadingCampers = state => state.campers.isLoadingCampers;
+
+export const selectIsLoadingCamperInfo = state =>
+  state.campers.isLoadingCamperInfo;
 
 export const selectError = state => state.campers.error;

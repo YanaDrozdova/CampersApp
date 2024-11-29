@@ -5,6 +5,7 @@ import { vehicleTypes } from '../constants.js';
 const initialState = {
   selectedFilters: [],
   location: '',
+  vehicleType: '',
 };
 
 const filtersSlice = createSlice({
@@ -21,6 +22,8 @@ const filtersSlice = createSlice({
         );
         // Додаємо новий тип кузова
         state.selectedFilters.push(filter);
+        // Оновлюємо тільки тип кузова, без додавання до масиву selectedFilters
+        state.vehicleType = filter.replace(' ', '');
       } else {
         // Якщо це не тип кузова, просто перемикаємо фільтр
         if (state.selectedFilters.includes(filter)) {

@@ -8,13 +8,21 @@ export const fetchCampers = createAsyncThunk(
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const page = state.campers.page;
-    const filter = state.filters.location;
+    const locationFilter = state.filters.location;
+    let vehicleTypeFilter =
+      state.filters.vehicleType.charAt(0).toLowerCase() +
+      state.filters.vehicleType.slice(1);
+
+    if (vehicleTypeFilter === 'van') {
+      vehicleTypeFilter = 'panelTruck';
+    }
 
     try {
       const { data } = await axios.get('/campers', {
         params: {
           page,
-          filter,
+          location: locationFilter,
+          form: vehicleTypeFilter,
           limit: 4, //параметри пагінації
         },
       });

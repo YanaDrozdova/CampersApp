@@ -6,7 +6,8 @@ const initialState = {
   page: 1,
   camperInfo: {},
   totalCount: 0, // загальна кількість кемперів
-  isLoading: false,
+  isLoadingCampers: false,
+  isLoadingCamperInfo: false,
   error: null,
 };
 
@@ -18,6 +19,7 @@ const campersSlice = createSlice({
       state.items = initialState.items;
       state.camperInfo = initialState.camperInfo;
       state.page = 1;
+      state.totalCount = initialState.totalCount;
     },
     setPage(state, action) {
       state.page = action.payload;
@@ -26,7 +28,7 @@ const campersSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(fetchCampers.pending, state => {
-        state.isLoading = true;
+        state.isLoadingCampers = true;
         state.error = null;
       })
       .addCase(fetchCampers.fulfilled, (state, action) => {
@@ -40,22 +42,22 @@ const campersSlice = createSlice({
         ];
 
         state.totalCount = action.payload.total;
-        state.isLoading = false;
+        state.isLoadingCampers = false;
       })
       .addCase(fetchCampers.rejected, (state, action) => {
         console.error('Fetch campers failed:', action.payload);
-        state.isLoading = false;
+        state.isLoadingCampers = false;
         state.error = action.payload;
       })
       .addCase(getCamperById.pending, state => {
-        state.isLoading = true;
+        state.isLoadingCamperInfo = true;
       })
       .addCase(getCamperById.fulfilled, (state, action) => {
-        state.isLoading = false;
+        state.isLoadingCamperInfo = false;
         state.camperInfo = action.payload;
       })
       .addCase(getCamperById.rejected, (state, action) => {
-        state.isLoading = false;
+        state.isLoadingCamperInfo = false;
         state.error = action.payload;
       });
   },
