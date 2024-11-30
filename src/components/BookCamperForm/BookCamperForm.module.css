@@ -32,6 +32,7 @@
     font-family: inherit;
 }
 
+
 .commentField {
     height: 118px;
     border-radius: 10px;
@@ -51,5 +52,18 @@
 .commentField::placeholder {
     color: #6C717B;
     /* Світло-сірий колір для placeholder */
+    font-size: 14px;
+}
+
+.datepicker {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-family: inherit;
+}
+
+.error {
     font-size: 14px;
 }
