@@ -57,7 +57,7 @@
 
 .datepicker {
     width: 100%;
-    padding: 10px;
+    padding: 0;
     border: none;
     background-color: transparent;
     outline: none;
@@ -65,5 +65,6 @@
 }
 
 .error {
-    font-size: 14px;
+    font-size: 12px;
+    color: red;
 }
