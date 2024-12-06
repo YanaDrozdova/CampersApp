@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { vehicleTypes } from '../constants.js';
+import { vehicleEquipments, vehicleTypes } from '../constants.js';
 
 const initialState = {
   selectedFilters: [],
   location: '',
   vehicleType: '',
+  equipmentFilters: {},
 };
 
 const filtersSlice = createSlice({
@@ -35,14 +36,41 @@ const filtersSlice = createSlice({
           // Додаємо новий фільтр
           state.selectedFilters.push(filter);
         }
+
+        // Перевіряємо, чи це фільтр обладнання і оновлюємо equipmentFilters
+        if (vehicleEquipments.includes(filter)) {
+          if (filter === 'automatic') {
+            state.equipmentFilters['transmission'] = 'automatic';
+          } else {
+            state.equipmentFilters[filter] = true;
+          }
+        }
+      }
+      // Оновлюємо equipmentFilters: видаляємо фільтри, яких немає в selectedFilters
+      Object.keys(state.equipmentFilters).forEach(key => {
+        if (!state.selectedFilters.includes(key) && key !== 'transmission') {
+          delete state.equipmentFilters[key];
+        }
+      });
+
+      // Якщо в selectedFilters немає фільтра "automatic", видаляємо transmission
+      if (!state.selectedFilters.includes('automatic')) {
+        delete state.equipmentFilters['transmission'];
       }
     },
     changeLocation(state, action) {
       state.location = action.payload;
     },
+    resetFilters(state) {
+      state.selectedFilters = [];
+      state.location = '';
+      state.vehicleType = '';
+      state.equipmentFilters = {};
+    },
   },
 });
 
-export const { toggleFilter, changeLocation } = filtersSlice.actions;
+export const { toggleFilter, changeLocation, resetFilters } =
+  filtersSlice.actions;
 
 export default filtersSlice.reducer;

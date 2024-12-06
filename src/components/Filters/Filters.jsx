@@ -26,10 +26,10 @@ export default function Filters() {
   // Об'єкт, що містить фільтри та відповідні іконки
   const filterIcons = {
     AC: 'icon-wind',
-    Automatic: 'icon-diagram',
-    Kitchen: 'icon-cup-hot',
+    automatic: 'icon-diagram',
+    kitchen: 'icon-cup-hot',
     TV: 'icon-tv',
-    Bathroom: 'icon-ph_shower',
+    bathroom: 'icon-ph_shower',
     Van: 'icon-van',
     'Fully Integrated': 'icon-bi_grid',
     Alcove: 'icon-alcove',

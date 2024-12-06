@@ -1,9 +1,9 @@
 export const vehicleEquipments = [
   'AC',
-  'Automatic',
-  'Kitchen',
+  'automatic',
+  'kitchen',
   'TV',
-  'Bathroom',
+  'bathroom',
 ];
 
 export const vehicleTypes = ['Van', 'Fully Integrated', 'Alcove'];

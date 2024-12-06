@@ -9,6 +9,7 @@ export const fetchCampers = createAsyncThunk(
     const state = thunkAPI.getState();
     const page = state.campers.page;
     const locationFilter = state.filters.location;
+    const vehicleEquipmentFilter = state.filters.equipmentFilters;
     let vehicleTypeFilter =
       state.filters.vehicleType.charAt(0).toLowerCase() +
       state.filters.vehicleType.slice(1);
@@ -23,7 +24,8 @@ export const fetchCampers = createAsyncThunk(
           page,
           location: locationFilter,
           form: vehicleTypeFilter,
-          limit: 4, //параметри пагінації
+          limit: 4, //параметри
+          ...vehicleEquipmentFilter,
         },
       });
       console.log('Fetched campers:', data.items);
