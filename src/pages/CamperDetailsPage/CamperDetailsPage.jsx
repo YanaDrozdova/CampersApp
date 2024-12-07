@@ -76,34 +76,6 @@ export default function CamperDetailsPage() {
               />
             </li>
           ))}
-          {/* <li className={css.camperImgItem}>
-            <img
-              className={css.camperImage}
-              alt="Camper"
-              src="/images/Pic-min.jpg"
-            />
-          </li>
-          <li className={css.camperImgItem}>
-            <img
-              className={css.camperImage}
-              alt="Camper"
-              src="/images/Pic-min.jpg"
-            />
-          </li>
-          <li className={css.camperImgItem}>
-            <img
-              className={css.camperImage}
-              alt="Camper"
-              src="/images/Pic-min.jpg"
-            />
-          </li>
-          <li className={css.camperImgItem}>
-            <img
-              className={css.camperImage}
-              alt="Camper"
-              src="/images/Pic-min.jpg"
-            />
-          </li> */}
         </ul>
         <p className={css.text}>{camperInfo.description}</p>
       </div>

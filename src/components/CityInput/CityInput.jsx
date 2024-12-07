@@ -5,15 +5,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeLocation } from '../../redux/filters/filtersSlice.js';
 
 export default function CityInput() {
-  // const [location, setLocation] = useState('');
   const dispatch = useDispatch();
   const location = useSelector(state => state.filters.location);
 
   const handleLocationChange = e => {
     dispatch(changeLocation(e.target.value));
     // console.log(e.target.value);
-    // setLocation(e.target.value);
-    // Логіка фільтрації кемперів
   };
   return (
     <div className={css.container}>

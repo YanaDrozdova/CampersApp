@@ -62,70 +62,6 @@ export default function Filters() {
             </button>
           </li>
         ))}
-        {/* <li className={css.equipItem}>
-          <button
-            className={clsx(css.filterBtn, {
-              [css.selected]: isSelected(filter),
-            })}
-          >
-            <svg width={'32px'} height={'32px'} className={css.icon}>
-              <use
-                width={'32px'}
-                height={'32px'}
-                href={`/src/assets/images/icons-defs.svg#icon-wind`}
-              />
-            </svg>
-            <p>AC</p>
-          </button>
-        </li>
-        <li className={css.equipItem}>
-          <button className={css.filterBtn}>
-            <svg width={'32px'} height={'32px'} className={css.icon}>
-              <use
-                width={'32px'}
-                height={'32px'}
-                href={`/src/assets/images/icons-defs.svg#icon-diagram`}
-              />
-            </svg>
-            <p>Automatic</p>
-          </button>
-        </li>
-        <li className={css.equipItem}>
-          <button className={css.filterBtn}>
-            <svg width={'32px'} height={'32px'} className={css.icon}>
-              <use
-                width={'32px'}
-                height={'32px'}
-                href={`/src/assets/images/icons-defs.svg#icon-cup-hot`}
-              />
-            </svg>
-            <p>Kitchen</p>
-          </button>
-        </li>
-        <li className={css.equipItem}>
-          <button className={css.filterBtn}>
-            <svg width={'32px'} height={'32px'} className={css.icon}>
-              <use
-                width={'32px'}
-                height={'32px'}
-                href={`/src/assets/images/icons-defs.svg#icon-tv`}
-              />
-            </svg>
-            <p>TV</p>
-          </button>
-        </li>
-        <li className={css.equipItem}>
-          <button className={css.filterBtn}>
-            <svg width={'32px'} height={'32px'} className={css.icon}>
-              <use
-                width={'32px'}
-                height={'32px'}
-                href={`/src/assets/images/icons-defs.svg#icon-ph_shower`}
-              />
-            </svg>
-            <p>Bathroom</p>
-          </button>
-        </li> */}
       </ul>
 
       <h4 className={css.filterTitle}>Vehicle type</h4>
@@ -150,42 +86,6 @@ export default function Filters() {
             </button>
           </li>
         ))}
-        {/* <li className={css.equipItem}>
-          <button className={css.vehicleTypeBtn}>
-            <svg width={'32px'} height={'32px'} className={css.icon}>
-              <use
-                width={'32px'}
-                height={'32px'}
-                href={`/src/assets/images/icons-defs.svg#icon-van`}
-              />
-            </svg>
-            <p>Van</p>
-          </button>
-        </li>
-        <li className={css.equipItem}>
-          <button className={css.fullyIntegrBtn}>
-            <svg width={'32px'} height={'32px'} className={css.icon}>
-              <use
-                width={'32px'}
-                height={'32px'}
-                href={`/src/assets/images/icons-defs.svg#icon-bi_grid`}
-              />
-            </svg>
-            <p>Fully Integrated</p>
-          </button>
-        </li>
-        <li className={css.equipItem}>
-          <button className={css.vehicleTypeBtn}>
-            <svg width={'32px'} height={'32px'} className={css.icon}>
-              <use
-                width={'32px'}
-                height={'32px'}
-                href={`/src/assets/images/icons-defs.svg#icon-alcove`}
-              />
-            </svg>
-            <p>Alcove</p>
-          </button>
-        </li> */}
       </ul>
 
       <div className={css.searchBtnContainer}>

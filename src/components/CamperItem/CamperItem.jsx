@@ -4,14 +4,47 @@ import css from './CamperItem.module.css';
 import FeaturesList from '../FeaturesList/FeaturesList.jsx';
 import { useDispatch } from 'react-redux';
 import { getCamperById } from '../../redux/campers/operations.js';
+import { useEffect, useState } from 'react';
 
 export default function CamperItem({ camper }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  // Отримуємо список сподобаних кемперів з localStorage
+  const getLikedCampers = () => {
+    const likedCampers = localStorage.getItem('likedCampers');
+    return likedCampers ? JSON.parse(likedCampers) : [];
+  };
+
+  const [liked, setLiked] = useState(getLikedCampers().includes(camper.id));
+
+  // Функція для оновлення стану у localStorage
+  const updateLikedCampers = id => {
+    const likedCampers = getLikedCampers();
+    if (likedCampers.includes(id)) {
+      // Якщо кемпер вже є, видаляємо його зі списку
+      const newLikedCampers = likedCampers.filter(camperId => camperId !== id);
+      localStorage.setItem('likedCampers', JSON.stringify(newLikedCampers));
+    } else {
+      // Додаємо кемпер до списку
+      likedCampers.push(id);
+      localStorage.setItem('likedCampers', JSON.stringify(likedCampers));
+    }
+  };
+
+  const handleHeartClick = () => {
+    setLiked(prev => !prev);
+    updateLikedCampers(camper.id);
+  };
+
   const handleClick = async () => {
     await dispatch(getCamperById(camper.id));
     navigate(`/catalog/${camper.id}/features`);
   };
+
+  useEffect(() => {
+    setLiked(getLikedCampers().includes(camper.id));
+  }, [camper.id]);
 
   return (
     <>
@@ -28,7 +61,16 @@ export default function CamperItem({ camper }) {
             <h2>{camper.name}</h2>
             <h2>€{camper.price.toFixed(2)}</h2>
           </div>
-          <svg width={'26px'} height={'24px'} className={css.icon}>
+          <svg
+            width={'26px'}
+            height={'24px'}
+            className={css.icon}
+            onClick={handleHeartClick}
+            style={{
+              fill: liked ? '#E44848' : '#101828',
+              stroke: liked ? '#E44848' : '#101828',
+            }}
+          >
             <use href={`/images/icons-defs.svg#icon-heart`} />
           </svg>
         </div>
@@ -49,32 +91,7 @@ export default function CamperItem({ camper }) {
           </div>
         </div>
         <p className={css.text}>{camper.description}</p>
-        {/* <ul className={css.featuresList}>
-          <li className={css.featureItem}>
-            <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-              <use href={`/images/icons-defs.svg#icon-diagram`} />
-            </svg>
-            <p className={css.itemText}>Automatic</p>
-          </li>
-          <li className={css.featureItem}>
-            <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-              <use href={`/images/icons-defs.svg#icon-fuel`} />
-            </svg>
-            <p className={css.itemText}>Petrol</p>
-          </li>
-          <li className={css.featureItem}>
-            <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-              <use href={`/images/icons-defs.svg#icon-cup-hot`} />
-            </svg>
-            <p className={css.itemText}>Kitchen</p>
-          </li>
-          <li className={css.featureItem}>
-            <svg width={'20px'} height={'20px'} className={css.featureIcon}>
-              <use href={`/images/icons-defs.svg#icon-wind`} />
-            </svg>
-            <p className={css.itemText}>AC</p>
-          </li>
-        </ul> */}
+
         <FeaturesList camper={camper} />
         <Button
           text="Show more"
