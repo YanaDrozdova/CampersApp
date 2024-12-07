@@ -58,7 +58,7 @@ export default function Filters() {
                   href={`/images/icons-defs.svg#${filterIcons[filter]}`}
                 />
               </svg>
-              <p>{filter}</p>
+              <p>{filter.charAt(0).toUpperCase() + filter.slice(1)}</p>
             </button>
           </li>
         ))}
