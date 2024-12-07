@@ -1,14 +1,16 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import clsx from 'clsx';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import clsx from 'clsx';
+import * as Yup from 'yup';
+import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
+import { addMonths } from 'date-fns'; // Правильний імпорт для addMonths
 import css from './BookCamperForm.module.css';
 
 import Button from '../Button/Button.jsx';
-import { addMonths } from 'date-fns'; // Правильний імпорт для addMonths
-import { useState } from 'react';
-// import { useDispatch } from 'react-redux';
-import * as Yup from 'yup';
 
 const BookingSchema = Yup.object().shape({
   username: Yup.string()
@@ -31,7 +33,10 @@ export default function BookCamperForm() {
 
   const handleSubmit = (values, actions) => {
     // Handle form submission logic here
-    console.log(values);
+    // Симулюємо відправку даних на сервер
+    console.log('Sending data:', values);
+    // Вивести повідомлення про успішне відправлення
+    toast.success('Your booking has been successfully sent!');
     // dispatch(addBooking(values));
     actions.resetForm();
     setStartDate(null); // Очищаємо значення дати початку
@@ -48,6 +53,7 @@ export default function BookCamperForm() {
 
   return (
     <div className={css.container}>
+      <ToastContainer />
       <h3 className={css.title}>Book your campervan now</h3>
       <p className={css.text}>
         Stay connected! We are always ready to help you.
