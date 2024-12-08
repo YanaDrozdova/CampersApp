@@ -1,0 +1,25 @@
+/* NotFoundPage.module.css */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.notFoundText {
+    font-weight: bold;
+    color: #475467;
+}
+
+.link {
+    text-decoration: none;
+    color: #E44848;
+}
+
+.link:hover {
+    text-decoration: underline;
+}

@@ -10,7 +10,8 @@
 }
 
 .rightColumn {
-    max-width: 888px;
+    /* max-width: 888px; */
+    width: calc(100% - 424px);
     display: flex;
     flex-direction: column;
     align-items: center;

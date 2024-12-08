@@ -28,10 +28,10 @@ export const fetchCampers = createAsyncThunk(
           ...vehicleEquipmentFilter,
         },
       });
-      console.log('Fetched campers:', data.items);
+      // console.log('Fetched campers:', data.items);
       return data;
     } catch (error) {
-      console.error('Error fetching campers:', error);
+      // console.error('Error fetching campers:', error);
 
       return thunkAPI.rejectWithValue(error.message);
     }

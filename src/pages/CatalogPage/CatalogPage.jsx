@@ -68,7 +68,6 @@ export default function CatalogPage() {
             ... No campers found matching your filters ...
           </p>
         )}
-        {isLoading && <p>Loading...</p>}
         {hasMore && !isLoading && (
           <Button
             text="Load more"

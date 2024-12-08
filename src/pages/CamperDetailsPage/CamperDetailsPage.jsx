@@ -13,7 +13,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import BookCamperForm from '../../components/BookCamperForm/BookCamperForm.jsx';
 import css from './CamperDetailsPage.module.css';
 import { getCamperById } from '../../redux/campers/operations.js';
-import { selectCamperInfo } from '../../redux/campers/selectors.js';
+import {
+  selectCamperInfo,
+  selectIsLoadingCamperInfo,
+} from '../../redux/campers/selectors.js';
+import { Loader } from '../../components/Loader/Loader.jsx';
 
 const makeNavLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
@@ -26,11 +30,11 @@ export default function CamperDetailsPage() {
   // console.log(backLinkRef.current);
 
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoadingCamperInfo);
   const { id } = useParams();
-  console.log(id);
 
   const camperInfo = useSelector(selectCamperInfo);
-  console.log(camperInfo);
+  // console.log(camperInfo);
 
   useEffect(() => {
     if (!camperInfo && id) {
@@ -39,7 +43,9 @@ export default function CamperDetailsPage() {
     window.scrollTo(0, 0);
   }, [dispatch, id, camperInfo]);
 
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <div className={css.container}>
       <div className={css.descritionWrap}>
         <div className={css.titleWrapper}>

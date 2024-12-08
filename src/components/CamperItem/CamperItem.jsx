@@ -1,14 +1,19 @@
 import { useNavigate } from 'react-router-dom';
-import Button from '../Button/Button.jsx';
-import css from './CamperItem.module.css';
-import FeaturesList from '../FeaturesList/FeaturesList.jsx';
-import { useDispatch } from 'react-redux';
-import { getCamperById } from '../../redux/campers/operations.js';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import clsx from 'clsx';
+
+import Button from '../Button/Button.jsx';
+import FeaturesList from '../FeaturesList/FeaturesList.jsx';
+import { getCamperById } from '../../redux/campers/operations.js';
+// import { selectIsLoadingCamperInfo } from '../../redux/campers/selectors.js';
+
+import css from './CamperItem.module.css';
 
 export default function CamperItem({ camper }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  // const isLoading = useSelector(selectIsLoadingCamperInfo);
 
   // Отримуємо список сподобаних кемперів з localStorage
   const getLikedCampers = () => {
@@ -90,7 +95,9 @@ export default function CamperItem({ camper }) {
             <p>{camper.location}</p>
           </div>
         </div>
-        <p className={css.text}>{camper.description}</p>
+        <p className={clsx(css.text, css.singleLineText)}>
+          {camper.description}
+        </p>
 
         <FeaturesList camper={camper} />
         <Button

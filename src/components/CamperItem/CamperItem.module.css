@@ -4,8 +4,12 @@
     overflow: hidden;
 }
 
+.camperImage {
+    object-fit: cover;
+}
+
 .camperInfoWrapper {
-    width: 524px;
+    max-width: 524px;
 }
 
 .titleWrapper {
@@ -53,6 +57,10 @@
     margin-bottom: 24px;
 }
 
-.camperImage {
-    object-fit: cover;
+.singleLineText {
+    white-space: nowrap;
+    /* Не переносити текст на новий рядок */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Додати три крапки в кінці */
 }
