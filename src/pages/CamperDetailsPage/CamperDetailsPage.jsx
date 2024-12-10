@@ -5,6 +5,7 @@ import {
   NavLink,
   Outlet,
   useLocation,
+  useNavigate,
   useParams,
 } from 'react-router-dom';
 import clsx from 'clsx';
@@ -32,7 +33,7 @@ export default function CamperDetailsPage() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoadingCamperInfo);
   const { id } = useParams();
-
+  const navigate = useNavigate();
   const camperInfo = useSelector(selectCamperInfo);
   // console.log(camperInfo);
 
@@ -42,6 +43,13 @@ export default function CamperDetailsPage() {
     }
     window.scrollTo(0, 0);
   }, [dispatch, id, camperInfo]);
+
+  // If camper info is not found, redirect to the catalog page
+  useEffect(() => {
+    if (!isLoading && !camperInfo && id) {
+      navigate('/catalog'); // Redirect to catalog page
+    }
+  }, [camperInfo, isLoading, id, navigate]);
 
   return isLoading ? (
     <Loader />
